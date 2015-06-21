@@ -29,4 +29,4 @@ arr[99] # => nil
 arr[-1] # => 4, equivalent of arr[arr.length - 1]
 ```
 
-In order to nicely handle accessing values out of the array in [`Map#at`](https://github.com/pdawczak/game_of_life_rb/blob/master/lib/map.rb#L27) there was `OutOfIndexAccess` supporting module introduced. It is irrelevant for solution itself, it just lets removing some `if` statements in [`Map#at`](https://github.com/pdawczak/game_of_life_rb/blob/master/lib/map.rb#L27).
+In order to nicely handle accessing values out of the array in [`Map#at`](https://github.com/pdawczak/game_of_life_rb/blob/master/lib/map.rb#L27) there was [`OutOfIndexAccess`](https://github.com/pdawczak/game_of_life_rb/blob/master/lib/support/out_of_index_access.rb) supporting module introduced. It is irrelevant for solution itself, highly Ruby specific that lets removing some `if` statements.
