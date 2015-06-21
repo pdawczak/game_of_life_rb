@@ -1,3 +1,8 @@
 language: ruby
 rvm:
-- 2.2.0
+  - 2.2.0
+
+bundler_args: --binstubs
+
+script:
+  - ./bin/rspec
