@@ -17,7 +17,7 @@ RSpec.describe CellBuilder do
   end
 
   describe "#cell_state" do
-    it "equals the value at specified point" do
+    it "equals the value at specified point in the map" do
       preparator = CellBuilder.new(map, 2, 2)
       expect(preparator.cell_state).to eq 1
     end
