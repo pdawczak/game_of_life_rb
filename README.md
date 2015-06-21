@@ -12,7 +12,7 @@ To solve the problem, there are 3 domain objects used:
 
 * [`CellBuilder`](https://github.com/pdawczak/game_of_life_rb/blob/master/lib/cell_builder.rb) - As stated before - `Cell`, to properly compute the *next state* needs information of it's *current state*, and *count of live neighbours*. As this is the only responibility, it shouldn't have access to `Map` - how to limit which values of board can be accessed? Because of that, there was a concept of `CellBuilder` introduced - it's purpose is to read `Map`'s cell values at proper indices, create new `Cell` and let it perform proper computing. Having process of accessing the values encapsulated gives great flexibility - what if in future requirements change the way we would like to consider values of neighours that lay in distance of 2 cell's from current one? Another `CellBuilder` could be intorduced and no changes to `Map` or `Cell` would be required.
 
-## Support
+## [`OutOfIndexAccess`](https://github.com/pdawczak/game_of_life_rb/blob/master/lib/support/out_of_index_access.rb) Support
 
 To simplify the problem, when checking values of cells out of the board, `Map` will return value of 0 - this is the case when calculating the next state for cells at the edges of the map (eg. at [0, 0]). 
 
