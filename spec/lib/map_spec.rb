@@ -53,6 +53,7 @@ EOM
     it "accesses value at specified point" do
       map = Map.new([ [0, 1],
                       [1, 0] ])
+
       expect(map.at(0, 1)).to eq 1
       expect(map.at(1, 1)).to eq 0
     end
