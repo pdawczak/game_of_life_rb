@@ -15,7 +15,7 @@ RSpec.describe Cell do
   end
 
   describe "#next_state" do
-    context "current state is 0" do
+    context "if current state is 0" do
       context "and has count of live neighbours != 3" do
         it "should remain 0" do
           expect(Cell.new(0, [0]).next_state).to eq 0
