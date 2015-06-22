@@ -6,8 +6,8 @@ class Map
 
   attr_reader :rows
 
-  def initialize(rows)
-    @rows = rows
+  def initialize(rows, cell_builder = CellBuilder)
+    @rows, @cell_builder = rows, cell_builder
   end
 
   def self.parse(to_parse)
@@ -19,7 +19,7 @@ class Map
   def tick
     @rows = rows.each_with_index.map do |row, i|
       row.each_with_index.map do |_, j|
-        CellBuilder.build_for(self, i, j).next_state
+        @cell_builder.build_for(self, i, j).next_state
       end
     end
   end
